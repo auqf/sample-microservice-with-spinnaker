@@ -4,6 +4,7 @@ RUN mkdir /build
 ADD . /build/
 WORKDIR /build 
 RUN go mod init sample-microservice
+RUN go mod tidy
 RUN go build -o main .
 FROM alpine
 ENV PORT 8080
